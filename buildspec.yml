@@ -1,19 +1,14 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      java: corretto17
   build:
     commands:
-      - ./gradlew bootJar
+      - echo Entered the build phase...
+      - mvn clean package
   post_build:
     commands:
-      - echo Build completed
+      - echo Build completed successfully
 artifacts:
   files:
-    - build/libs/*.jar
-    - scripts/*.sh
-    - appspec.yml
-  #com/mycompany/app/HelloWorld.java, specifying yes will place this file in /HelloWorld.java
+    - target/order-service.jar
   discard-paths: yes
