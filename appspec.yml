@@ -4,4 +4,4 @@ hooks:
   BeforeInstall:
     - location: install.sh
       timeout: 300
-      run as: root
+      runas: root
